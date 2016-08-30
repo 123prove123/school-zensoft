@@ -15,15 +15,15 @@ const AlgebraFiveBookSecond = new Book('Algebra Five Second', 'Good Book')
 const AlgebraFive = new Subject(
   'Algebra Five', 5, 6,
   [AlgebraFiveBookFirst, AlgebraFiveBookSecond],
-  'quote hz');
+  10000);
 
 const MikeDad = new Parent('MikeDad', 700520597, 'President');
 const MikeMom = new Parent('MikeMom', 700520597, 'Support president');
-// const Mike = new Student('Mike', 70052097, true, 1997, 'A', [MikeDad, MikeMom]);
+const Mike = new Student('Mike', 70052097, true, 1997, 'A', [MikeDad, MikeMom]);
 
-// has't teacher ooo fuck
+
 const AlgebraTeacherRole = new TeacherRole(AlgebraFive);
 
-const groupA = new StudentGroup(5, 5, AlgebraTeacherRole, [])
+const groupA = new StudentGroup(5, 5, AlgebraTeacherRole, [Mike])
 
 console.log(groupA);
