@@ -1,8 +1,8 @@
-const Person = require('../person.js');
+const Person = require('./commons/person.js');
 
 class Parent extends Person{
-  constructor(name, contacts, whoWork) {
-    super(name,contacts);
+  constructor(name, contact, whoWork) {
+    super(name,contact);
     this.setWhoWork(whoWork);
   }
   setWhoWork(position) {

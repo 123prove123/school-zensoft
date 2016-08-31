@@ -1,20 +1,20 @@
-const Person = require('../person.js');
+const Person = require('./commons/person.js');
 const Parent = require('./parent.js');
-const StudentGroup = require('../student-group.js');
+const StudentGroup = require('./student-group.js');
 
 class Student extends Person{
-  constructor(name, contacts, isActive, dateOfBirth,
+  constructor(name, contact, isActive, dateOfBirth,
     studentGroup,parents = []) {
-    super(name,contacts,isActive,dateOfBirth)
+    super(name,contact,isActive,dateOfBirth)
     this.setStudentGroup(studentGroup);
     this.parents = parents;
   }
   setStudentGroup(studentGroup) {
-    this.studentGroup = new StudentGroup(studentGroup);
+    this.studentGroup = studentGroup;
     return this;
   }
   addParent(parent){
-    this.parents.push(new Parent(parent));
+    this.parents.push(parent);
     return this;
   }
 }
