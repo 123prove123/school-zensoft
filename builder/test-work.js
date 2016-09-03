@@ -38,7 +38,4 @@ const AlgebraTeacherRole = new TeacherRole(AlgebraSubject, AnnaPetrovna);
 
 
 
-GroupFiveA.addStudent(Mike);
-GroupFiveA.addTeacherRole(AlgebraTeacherRole);
-
 module.exports = GroupFiveA;

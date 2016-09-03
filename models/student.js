@@ -7,15 +7,20 @@ class Student extends Person{
     studentGroup,parents = []) {
     super(name,contact,isActive,dateOfBirth)
     this.setStudentGroup(studentGroup);
-    this.parents = parents;
+    this.setParents(parents);
   }
   setStudentGroup(studentGroup) {
     this.studentGroup = studentGroup;
     return this;
   }
-  addParent(parent){
-    this.parents.push(parent);
-    return this;
+  setParents(parents) {
+    this.parents = parents;
+  }
+  getStudentGroup() {
+    return this.studentGroup;
+  }
+  getParents() {
+    return this.parents;
   }
 }
 

@@ -4,10 +4,7 @@ class Subject {
     this.setLevel(level);
     this.setHours(hours);
     this.setQuote(quote);
-    this.books = books;
-  }
-  addBook(book) {
-    this.books.push(new Book(book));
+    this.setBooks(books)
   }
   setName(name) {
     this.name = name;
@@ -28,6 +25,21 @@ class Subject {
   setQuote(quote) {
     this.quote = quote
     return this;
+  }
+  getName() {
+    return this.name;
+  }
+  getLevel() {
+    return this.level;
+  }
+  getHours() {
+    return this.hours;
+  }
+  getBooks() {
+    return this.books;
+  }
+  getQuote() {
+    return this.quoute
   }
 }
 

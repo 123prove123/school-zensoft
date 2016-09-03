@@ -11,5 +11,11 @@ class Position {
     this.name = name;
     return this;
   }
+  getQuote() {
+    return this.quoute;
+  }
+  getName() {
+    return this.name;
+  }
 }
 module.exports = Position;

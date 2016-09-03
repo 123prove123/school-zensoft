@@ -1,10 +1,10 @@
 const TeacherRole = require('./teacher-role.js');
 
 class StudentGroup {
-  constructor(level, groupNumber, teacherRole = [], students = [] ) {
+  constructor(level, groupNumber, teacherRoles = [], students = [] ) {
     this.setLevel(level);
     this.setGroupNumber(groupNumber);
-    this.setTeacherRoles(teacherRole);
+    this.setTeacherRoles(teacherRoles);
     this.setStudents(students);
   }
   setLevel(level) {
@@ -23,12 +23,17 @@ class StudentGroup {
     this.teacherRoles = teacherRoles;
     return this;
   }
-  addStudent(student) {
-    this.students.push(student);
-    return this;
+  getLevel() {
+    return this.level;
   }
-  addTeacherRole(teacherRole) {
-    this.teacherRoles.push(teacherRole);
+  getGroupNumber() {
+    return this.groupNumber;
+  }
+  getStudents() {
+    return this.students;
+  }
+  getTeacherRoles() {
+    return this.teacherRoles;
   }
 }
 

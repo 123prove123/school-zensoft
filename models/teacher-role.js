@@ -13,6 +13,12 @@ class TeacherRole {
     this.teacher = teacher;
     return this;
   }
+  getTeacher() {
+    return this.teacher;
+  }
+  getSubject() {
+    return this.subject;
+  }
 }
 
 module.exports = TeacherRole;

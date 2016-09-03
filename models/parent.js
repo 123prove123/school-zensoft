@@ -9,6 +9,10 @@ class Parent extends Person{
     this.whoWork = position;
     return this;
   }
+  getWhoWork() {
+    return whoWork;
+  }
+
 }
 
 module.exports = Parent;
