@@ -1,37 +1,35 @@
 class Person {
-  constructor(name,contact,isActive,dateOfBirth) {
-    this.setName(name);
-    this.setContact(contact);
-    this.setActive(isActive);
-    this.setDate(dateOfBirth);
+  constructor(user) {
+    this.user = user;
   }
+  // create user
   setName(name) {
-    this.name = name;
+    this.user.name = name;
     return this;
   }
   getName() {
-    return this.name;
+    return this.user.name;
   }
   setContact(contact) {
-    this.contact = contact;
+    this.user.contact = contact;
     return this;
   }
   getContact(){
-    return this.contact;
+    return this.user.contact;
   }
   setActive(isActive) {
-    this.isActive = isActive;
+    this.user.isActive = isActive;
     return this;
   }
   getIsActive() {
-    return this.isActive;
+    return this.user.isActive;
   }
   setDate(dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
+    this.user.dateOfBirth = dateOfBirth;
     return this;
   }
   getDate(){
-    return this.date;
+    return this.user.dateOfBirth;
   }
 
 }

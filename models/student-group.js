@@ -11,29 +11,36 @@ class StudentGroup {
     this.level = level;
     return this;
   }
+  getLevel() {
+    return this.level;
+  }
   setGroupNumber(groupNumber) {
     this.groupNumber = groupNumber;
     return this;
   }
+  getGroupNumber() {
+    return this.groupNumber;
+  }
   setStudents(students) {
     this.students = students;
+    return this;
+  }
+  getStudents() {
+    return this.students;
+  }
+  addStudent(student) {
+    this.students.push(student);
     return this;
   }
   setTeacherRoles(teacherRoles) {
     this.teacherRoles = teacherRoles;
     return this;
   }
-  getLevel() {
-    return this.level;
-  }
-  getGroupNumber() {
-    return this.groupNumber;
-  }
-  getStudents() {
-    return this.students;
-  }
   getTeacherRoles() {
     return this.teacherRoles;
+  }
+  addTeacherRole(teacherRole) {
+    this.teacherRoles.push(teacherRole);
   }
 }
 

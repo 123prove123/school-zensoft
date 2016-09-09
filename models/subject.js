@@ -10,33 +10,36 @@ class Subject {
     this.name = name;
     return this;
   }
+  getName() {
+    return this.name;
+  }
   setLevel(level){
     this.level = level;
     return this;
+  }
+  getLevel() {
+    return this.level;
   }
   setHours(hours) {
     this.hours = hours;
     return this;
   }
+  getHours() {
+    return this.hours;
+  }
   setBooks(books) {
     this.books = books;
     return this;
   }
+  getBooks() {
+    return this.books;
+  }
+  addBook(book) {
+    this.books.push(book);
+  }
   setQuote(quote) {
     this.quote = quote
     return this;
-  }
-  getName() {
-    return this.name;
-  }
-  getLevel() {
-    return this.level;
-  }
-  getHours() {
-    return this.hours;
-  }
-  getBooks() {
-    return this.books;
   }
   getQuote() {
     return this.quoute

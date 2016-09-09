@@ -1,5 +1,3 @@
-const Subject = require('./subject.js');
-
 class TeacherRole {
   constructor(subject, teacher) {
     this.setSubject(subject);

@@ -1,23 +1,28 @@
 const Person = require('./commons/person.js');
 
 class Teacher extends Person {
-  constructor(name, contact, isActive, dateOfBirth, subjects = [], studentGroups = [], salaryes, positions) {
-    super(name,contact, isActive, dateOfBirth)
+  constructor(user, subjects = [], studentGroups = [],  position) {
+    super(user)
     this.setSubjects(subjects);
     this.setStudentGroups(studentGroups);
-    this.setSalaryes(salaryes);
-    this.setPositions(positions)
+    this.setPositions(position)
   }
-  setSalaryes(salaryes){
-    this.salaryes = salaryes
+  setPositions(position){
+    this.position = position;
     return this;
   }
-  setPositions(positions){
-    this.positions = positions;
-    return this;
+  getPosition() {
+    return this.position;
   }
   setStudentGroups(studentGroups) {
     this.studentGroups = studentGroups;
+    return this;
+  }
+  getStudentGroups() {
+    return this.studentGroups;
+  }
+  addStudentGroups(studentGroup) {
+    this.studentGroup.push(studentGroup);
     return this;
   }
   setSubjects(subjects) {
@@ -27,14 +32,9 @@ class Teacher extends Person {
   getSubjects() {
     return this.subjects;
   }
-  getStudentGroups() {
-    return this.studentGroups;
-  }
-  getSalaryes() {
-    return this.salaryes;
-  }
-  getPositions() {
-    return this.positions;
+  addSubject(subject){
+    this.subjects.push(subject);
+    return this;
   }
 }
 
