@@ -1,66 +1,66 @@
 const Teacher = require('../models/teacher.js');
-
-
+const Store = require('../models/store.js');
+let TeacherArray = [];
+var counter = 0;
 class TeacherService{
   constructor() {
-    this.counter = 0;
-    this.store = [];
   };
-  createTeacher(teacher) {
-    teacher.id = this.counter;
-    this.counter++;
-    this.store.push(new Teacher(teacher));
+  static createTeacher(teacher) {
+    teacher.id = counter;
+    counter++;
+    TeacherArray.push(new Teacher(teacher));
     return this;
   };
-  removeTeacherById(id){
-    this.store = this.store.filter(function(el){
+  static removeTeacherById(id){
+    TeacherArray = TeacherArray.filter(function(el){
       return el.user.id !== id;
     });
   };
-  removeTeacher(field, value) {
-    this.store = this.store.filter(function(el){
+  static removeTeacher(field, value) {
+    TeacherArray = TeacherArray.filter(function(el){
       if(el[field] === value) {
         return true;
       } else {
-        if(el.user[field] === value) {
+        if(el.user[field] !== value) {
           return true;
         }
       }
       return false;
     });
   }
-  findTeacherById(id) {
-    return this.store.filter(function(el){
+  static findTeacherById(id) {
+    return TeacherArray.filter(function(el){
       return el.user.id === id;
     });
   }
-  findTeacher(field, value) {
-    return this.store.filter(function(el){
+  static findTeacher(field, value) {
+    return TeacherArray.filter(function(el){
       if(el[field] === value) {
         return true;
       } else {
-        if(el.user[field] === value) {
+        if(el.user[field] !== value) {
           return true;
         }
       }
       return false;
     });
   };
-  findAllTeacher(){
-    return this.store;
+  static findAllTeacher(){
+    return TeacherArray;
   };
+  static save() {
 
+  }
 }
 
-const TeacherArray = new TeacherService();
+TeacherService.createTeacher({name: 'Mike'}, [1,2], [1,2], 'Teacher');
+TeacherService.createTeacher({name: 'John'}, [1,2], [1,2], 'Teacher');
 
-TeacherArray.createTeacher({name: 'Mike'}, [1,2], [1,2], 'Teacher');
 
 
-TeacherArray.createTeacher({name: 'Two'}, [1,2], [1,2], 'Teacher');
 
-// console.log(TeacherArray.removeTeacher('name', 'Mike'));
-// console.log(TeacherArray.findAllTeacher());
 
+
+console.log(TeacherArray)
 
 module.exports = TeacherArray;
