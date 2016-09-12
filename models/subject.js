@@ -1,5 +1,5 @@
 class Subject {
-  constructor(name, level, hours, books = [], quote) {
+  constructor(name, level, hours, quote, books = [] ) {
     this.setName(name);
     this.setLevel(level);
     this.setHours(hours);
@@ -36,6 +36,7 @@ class Subject {
   }
   addBook(book) {
     this.books.push(book);
+    return this;
   }
   setQuote(quote) {
     this.quote = quote

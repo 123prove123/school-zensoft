@@ -19,9 +19,9 @@ class Student extends Person{
   getParents() {
     return this.parents;
   }
-  addParents(parent) {
+  addParent(parent) {
     this.parents.push(parent);
-    return this
+    return this;
   }
 }
 

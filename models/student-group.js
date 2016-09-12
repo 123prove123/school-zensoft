@@ -41,6 +41,7 @@ class StudentGroup {
   }
   addTeacherRole(teacherRole) {
     this.teacherRoles.push(teacherRole);
+    return this;
   }
 }
 

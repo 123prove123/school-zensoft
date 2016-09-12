@@ -5,9 +5,9 @@ class Teacher extends Person {
     super(user)
     this.setSubjects(subjects);
     this.setStudentGroups(studentGroups);
-    this.setPositions(position)
+    this.setPosition(position)
   }
-  setPositions(position){
+  setPosition(position){
     this.position = position;
     return this;
   }
@@ -21,8 +21,8 @@ class Teacher extends Person {
   getStudentGroups() {
     return this.studentGroups;
   }
-  addStudentGroups(studentGroup) {
-    this.studentGroup.push(studentGroup);
+  addStudentGroup(studentGroup) {
+    this.studentGroups.push(studentGroup);
     return this;
   }
   setSubjects(subjects) {

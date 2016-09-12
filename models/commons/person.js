@@ -10,8 +10,8 @@ class Person {
   getName() {
     return this.user.name;
   }
-  setContact(contact) {
-    this.user.contact = contact;
+  setContact(number) {
+    this.user.contact = number;
     return this;
   }
   getContact(){
