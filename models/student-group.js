@@ -1,4 +1,5 @@
 const TeacherRole = require('./teacher-role.js');
+const StudentGroupService = require('../services/student-group-service.js');
 
 class StudentGroup {
   constructor(level, groupNumber, teacherRoles = [], students = [] ) {
@@ -6,6 +7,9 @@ class StudentGroup {
     this.setGroupNumber(groupNumber);
     this.setTeacherRoles(teacherRoles);
     this.setStudents(students);
+  }
+  save() {
+    StudentGroupService.add(this);
   }
   setLevel(level) {
     this.level = level;

@@ -1,10 +1,14 @@
 const Person = require('./commons/person.js');
+const StudentService = require('../services/student-service.js');
 
 class Student extends Person{
   constructor(user, studentGroup, parents) {
     super(user);
     this.setStudentGroup(studentGroup);
     this.setParents(parents);
+  }
+  save() {
+    StudentService.add(this);
   }
   setStudentGroup(studentGroup) {
     this.studentGroup = studentGroup;
