@@ -1,5 +1,6 @@
 const Store = require('./store.js');
 const StoreTeacher = new Store();
+const TeacherRoleService = require('./teacher-role-service.js');
 
 class TeacherService {
   static create(model) {
@@ -7,9 +8,16 @@ class TeacherService {
   }
   static add(model) {
     StoreTeacher.add(model);
+    return this;
   }
   static getStore() {
     return StoreTeacher;
+  }
+  static salaryTeacherById(id) {
+    return TeacherRoleService.salaryTeacherFindById(id);
+  }
+  static salaryTeacherBy(field, value) {
+    return TeacherRoleService.salaryTeacherFindBy(field,value);
   }
 }
 

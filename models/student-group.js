@@ -10,6 +10,7 @@ class StudentGroup {
   }
   save() {
     StudentGroupService.add(this);
+    return this;
   }
   setLevel(level) {
     this.level = level;

@@ -1,7 +1,14 @@
+const BookService = require('../services/book-service.js')
+
 class Book {
   constructor(subject, name) {
     this.setSubject(subject);
     this.setName(name);
+  }
+
+  save() {
+    BookService.add(this);
+    return this;
   }
   setName(name){
     this.name = name

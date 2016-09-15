@@ -1,3 +1,5 @@
+const SubjectService = require('../services/subject-service.js');
+
 class Subject {
   constructor(name, level, hours, quote, books = [] ) {
     this.setName(name);
@@ -5,6 +7,10 @@ class Subject {
     this.setHours(hours);
     this.setQuote(quote);
     this.setBooks(books)
+  }
+  save() {
+    SubjectService.add(this);
+    return this;
   }
   setName(name) {
     this.name = name;

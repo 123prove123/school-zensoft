@@ -1,8 +1,11 @@
-var counter = 0;
 
 class Store extends Map {
+  constructor() {
+    super(...arguments);
+    this.counter = 1;
+  }
   getNextId() {
-    return counter++;
+    return this.counter++;
   }
   fillId(value) {
     if(!value.id) {
@@ -31,23 +34,20 @@ class Store extends Map {
     this.delete(id);
   }
   findBy(field, value) {
-    var callBack;
+    var callback;
     this.forEach(function(el, id){
       if(el[field] === value) {
-        return el;
-      } else {
-        if(el.user[field] === value) {
-          callBack = el;
-        }
+        callback = el;
       }
     });
-    return callBack;
+    return callback;
   }
   findById(id) {
-    this.get(id);
+    return this.get(id);
   }
   checkId(id) {
-    this.has(id);
+    return this.has(id);
+
   }
   getAll() {
     return this;

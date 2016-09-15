@@ -10,6 +10,7 @@ class Teacher extends Person {
   }
   save() {
     TeacherService.add(this);
+    return this;
   }
   setPosition(position){
     this.position = position;
