@@ -11,6 +11,14 @@ class SubjectService extends Store{
   static getStore() {
     return SubjectStore;
   }
+  static findById(id) {
+    return SubjectStore.findById(id);
+  }
+  static addBookToSubjectById(book, id) {
+    const subject = SubjectStore.findById(id);
+    subject.addBook(book);
+    return subject;
+  }
 }
 
 module.exports = SubjectService;

@@ -31,11 +31,11 @@ const students = {
     dateOfBirth: '2005.11.21'
   },
   BobMarley: {
-    name: 'BobMarley',
+    name: 'Bob Marley',
     contact: 123,
     isActive: true,
     dateOfBirth: '1997.11.21'
-  },
+  }
 };
 
 const studentGroups = {
@@ -128,7 +128,12 @@ class PositionBuilder {
 class ParentBuilder {
   static create(name) {
     const options = parents[name];
-    const parent = new Parent({name : options.name, contact : options.contact, isActive: options.isActive, dateOfBirth: options.dateOfBirth}, options.whoWork);
+    const parent = new Parent({
+      name: options.name,
+      contact: options.contact,
+      isActive: options.isActive,
+      dateOfBirth: options.dateOfBirth
+    }, options.whoWork);
     return parent;
   }
 }
@@ -136,7 +141,12 @@ class ParentBuilder {
 class TeacherBuilder {
   static create(name) {
     const options = teachers[name];
-    const teacher = new Teacher({name : options.name, contact : options.contact, isActive: options.isActive, dateOfBirth: options.dateOfBirth});
+    const teacher = new Teacher({
+      name: options.name,
+      contact: options.contact,
+      isActive: options.isActive,
+      dateOfBirth: options.dateOfBirth
+    });
     return teacher;
   }
 }
@@ -144,7 +154,12 @@ class TeacherBuilder {
 class StudentBuilder {
   static create(name) {
     const options = students[name];
-    const student = new Student({name : options.name, contact : options.contact, isActive: options.isActive, dateOfBirth: options.dateOfBirth});
+    const student = new Student({
+      name: options.name,
+      contact: options.contact,
+      isActive: options.isActive,
+      dateOfBirth: options.dateOfBirth
+    });
     return student;
   }
 }
@@ -169,22 +184,28 @@ class MainBuilder {
   static teacher(teacher) {
     return TeacherBuilder.create(teacher);
   }
+
   static student(student) {
     return StudentBuilder.create(student);
   }
+
   static studentGroup(studentGroups) {
     return StudentGroupBuilder.create(studentGroups);
   }
-  static book(book){
+
+  static book(book) {
     return BookBuilder.create(book);
   }
+
   static parent(parent) {
     return ParentBuilder.create(parent);
   }
+
   static position(position) {
     return PositionBuilder.create(position);
   }
-  static subject(subject){
+
+  static subject(subject) {
     return SubjectBuilder.create(subject);
   }
 }

@@ -11,6 +11,12 @@ class BookService{
   static getStore() {
     return BookStore;
   }
+  static findBy(field, name) {
+    return BookStore.findBy(field,name);
+  }
+  static findById(id) {
+    return BookStore.findById(id);
+  }
 }
 
 module.exports = BookService;

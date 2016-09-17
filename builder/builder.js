@@ -1,4 +1,9 @@
 const TeacherRole = require('../models/teacher-role.js');
+const Book = require('../models/book.js');
+const Subject = require('../models/subject.js');
+const Teacher = require('../models/teacher.js');
+const Student = require('../models/student.js');
+
 
 const StudentGroupService = require('../services/student-group-service.js');
 const TeacherService = require('../services/teacher-service.js');
@@ -10,7 +15,6 @@ const BookService = require('../services/book-service.js');
 const ParentService = require('../services/parent-service.js');
 
 const MainBuilder = require('./main-builder.js');
-
 
 
 const vasyaPupkin = MainBuilder.student('VasyaPupkin');
@@ -53,7 +57,34 @@ A2.addStudent(vasyaPupkin).save();
 
 teacherPavelVolya.addStudentGroup(A2).addSubject(subjectAlgebraTwo).save();
 
+const bobMarley = MainBuilder.student('BobMarley').save();
 
-var test = TeacherService.salaryTeacherBy('name', 'John Smith');
+StudentGroupService.addStudentToGroupById(bobMarley, 1);
+
+BookService.add(new Book('Chemistry One','Chemistry One'));
+
+SubjectService.add(new Subject('Chemistry One', 2, 10, 3000));
+
+SubjectService.addBookToSubjectById(BookService.findById(2),3);
+
+TeacherService.add(new Teacher(
+  {name: 'Teacher 3', contact: 1231, isActive:true, dateOfBirth: '1982.11.05'},
+  SubjectService.findById(3)
+));
+
+TeacherService.findById(3).setPosition(positionTeacher);
+
+TeacherRoleService.add(new TeacherRole(SubjectService.findById(3), TeacherService.findById(3)));
+
+StudentGroupService.addTeacherRoleToGroupById(TeacherRoleService.findById(3), 2);
+
+StudentService.add(new Student(
+  {name:"Ilya Taracov", contact: 23123, isActive:true, dateOfBirth: '1997.11.05'}
+));
+
+StudentGroupService.addStudentToGroupById(StudentService.getStore().findById(3), 2);
+
+
+const test = BookService.getStore();
 
 module.exports = test;

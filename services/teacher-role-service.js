@@ -34,6 +34,12 @@ class TeacherRoleService {
     });
     return sum;
   }
+
+  static findById(id) {
+    return TeacherRoleStore.findById(id);
+  }
+  
+  
 }
 
 module.exports = TeacherRoleService;

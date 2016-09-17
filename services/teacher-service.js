@@ -19,6 +19,9 @@ class TeacherService {
   static salaryTeacherBy(field, value) {
     return TeacherRoleService.salaryTeacherFindBy(field,value);
   }
+  static findById(id) {
+    return StoreTeacher.findById(id);
+  }
 }
 
 
