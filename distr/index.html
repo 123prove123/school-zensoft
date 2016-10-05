@@ -8,30 +8,38 @@
           src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.1/require.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <style>
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+      padding: 8px;
+      line-height: 1.42857143;
+      vertical-align: top;
+      border-top: 1px solid #ddd;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
   <h2>Student Groups</h2>
-  <table id="StudentGroups" class="table table-inverse">
+  <div class="table-responsive">
+    <table id="StudentGroups" class="table table-inverse">
     <thead >
       <tr>
         <th>Level</th>
         <th>groupNUmber</th>
         <th>TeacerRoles</th>
         <th>Students</th>
-        <th>id</th>
       </tr>
     </thead>
     <tbody>
 
     </tbody>
   </table>
+  </div>
   <br>
   <br>
   <h2>Books</h2>
-  <table id="Books" class="table table-inverse">
+  <div class="table-responsive">
+    <table id="Books" class="table table-inverse">
     <thead>
       <tr>
         <th>Subject</th>
@@ -42,6 +50,7 @@
 
     </tbody>
   </table>
+  </div>
 </div>
 
 </body>

@@ -14,7 +14,7 @@ class BuilderHTML{
       tdGroupNumber.textContent = store.findById(i).groupNumber;
       tr.appendChild(tdLevel);
       tr.appendChild(tdGroupNumber);
-      table.appendChild(tr);
+      table.querySelector('tbody').appendChild(tr);
     }
     return store;
   }
@@ -22,6 +22,7 @@ class BuilderHTML{
     const store = BookService.getStore().getAll();
     const storeLength = store.size + 1;
     let table = document.getElementById('Books');
+    console.log(table);
     for(let i = 1; i < storeLength; i++) {
       let tr = document.createElement('tr');
       let tdSubject = document.createElement('td');
@@ -30,7 +31,7 @@ class BuilderHTML{
       tdName.textContent = store.findById(i).name;
       tr.appendChild(tdSubject);
       tr.appendChild(tdName);
-      table.appendChild(tr);
+      table.querySelector('tbody').appendChild(tr);
     }
     return store;
   }
