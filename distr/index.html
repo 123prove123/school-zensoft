@@ -4,41 +4,47 @@
 <head>
   <meta charset="utf-8"/>
   <title>TypeScript HTML App</title>
+  <link rel="stylesheet" href="css/style.css">
   <script data-main="index" type="text/javascript"
           src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.1/require.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <style>
-    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-      padding: 8px;
-      line-height: 1.42857143;
-      vertical-align: top;
-      border-top: 1px solid #ddd;
-    }
+
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h2>Student Groups</h2>
-  <div class="table-responsive">
-    <table id="StudentGroups" class="table table-inverse">
-    <thead >
-      <tr>
-        <th>Level</th>
-        <th>groupNUmber</th>
-        <th>TeacerRoles</th>
-        <th>Students</th>
-      </tr>
-    </thead>
-    <tbody>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
 
-    </tbody>
-  </table>
-  </div>
-  <br>
-  <br>
-  <h2>Books</h2>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#" id="StudentGroupOpen">StudentGroup Form</a></li>
+        <li><a href="#" id="BookOpen">Book Form</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid">
   <div class="table-responsive">
+    <h2>Student Groups</h2>
+    <table id="StudentGroups" class="table table-inverse">
+      <thead >
+        <tr>
+          <th>Level</th>
+          <th>groupNUmber</th>
+          <th>TeacerRoles</th>
+          <th>Students</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="table-responsive">
+  <h2>Books</h2>
     <table id="Books" class="table table-inverse">
     <thead>
       <tr>
@@ -52,6 +58,18 @@
   </table>
   </div>
 </div>
+
+
+  <form id="StudentGroupForm">
+    <div class="form-inner">
+      <a href="#" class="close-form" id="StudentGroupClose">Close</a>
+      <label for="">Level</label>
+      <input id="GroupLevelInput" type="number">
+      <label for="">Group Number</label>
+      <input id="GroupNumberInput" type="text">
+      <a href="#" class="btn btn-danger" id="addStudentGroup">Add</a>
+    </div>
+  </form>
 
 </body>
 </html>

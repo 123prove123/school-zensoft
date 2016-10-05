@@ -1,4 +1,4 @@
-import StudentGroupService from '../services/student-group-service'
+import StudentGroupService from '../services/student-group-service';
 import BookService from '../services/book-service';
 
 var groupData = {

@@ -1,9 +1,7 @@
 import Builder from './builder/builder';
 import BuilderHTML from './builder/builder-html';
-
-import BookService from './services/book-service';
-import StudentGroupService from './services/student-group-service';
+import BuilderEvents from './builder/builder-events';
 
 Builder.run();
-
 BuilderHTML.run();
+BuilderEvents.run();

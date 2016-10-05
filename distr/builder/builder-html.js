@@ -21,7 +21,6 @@ define(["require", "exports", '../services/student-group-service', '../services/
             const store = book_service_1.default.getStore().getAll();
             const storeLength = store.size + 1;
             let table = document.getElementById('Books');
-            console.log(table);
             for (let i = 1; i < storeLength; i++) {
                 let tr = document.createElement('tr');
                 let tdSubject = document.createElement('td');
