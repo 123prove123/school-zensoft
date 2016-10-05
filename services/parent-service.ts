@@ -2,8 +2,8 @@ import Store from './store';
 const ParentStore = new Store();
 
 class ParentService{
-  static create(model) {
-    return new Parent(model);
+  static create(name, contact, isActive, dateOfBirth, whoWork) {
+    return new Parent({name, contact, isActive, dateOfBirth}, whoWork);
   }
   static add(model) {
     ParentStore.add(model);
@@ -15,4 +15,4 @@ class ParentService{
 
 export default ParentService;
 
-import Parent from '../models/student-group';
+import Parent from '../models/parent';

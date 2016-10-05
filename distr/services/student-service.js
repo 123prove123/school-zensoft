@@ -2,8 +2,8 @@ define(["require", "exports", './store', '../models/student'], function (require
     "use strict";
     const StudentStore = new store_1.default();
     class StudentService {
-        static create(model) {
-            return new student_1.default(model);
+        static create(name, contact, isActive, dateOfBirth) {
+            return new student_1.default({ name, contact, isActive, dateOfBirth });
         }
         static add(model) {
             StudentStore.add(model);

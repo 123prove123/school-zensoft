@@ -31,6 +31,22 @@ class StudentGroupService {
     });
     return teachers;
   }
+  static getTeachersNameByGroupId(id) {
+    let teachers = StudentGroupService.getTeachersByGroupId(id);
+    let teacherName = [];
+    teachers.forEach(function(el){
+      teacherName.push(el.user.name);
+    });
+    return teacherName;
+  }
+  static getStudentsNameByGroupId(id) {
+    let students = StudentGroupService.getStudentsByGroupId(id);
+    let studentName = [];
+    students.forEach(function(el){
+      studentName.push(el.user.name);
+    });
+    return studentName;
+  }
 }
 
 export default StudentGroupService;

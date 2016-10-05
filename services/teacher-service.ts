@@ -3,8 +3,8 @@ const StoreTeacher = new Store();
 import TeacherRoleService from './teacher-role-service';
 
 class TeacherService {
-  static create(model) {
-    return new Teacher(model);
+  static create(name, contact, isActive, dateOfBirth) {
+    return new Teacher({name, contact, isActive, dateOfBirth});
   }
   static add(model) {
     StoreTeacher.add(model);

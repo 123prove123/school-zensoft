@@ -9,10 +9,20 @@ define(["require", "exports", '../services/student-group-service', '../services/
                 let tr = document.createElement('tr');
                 let tdLevel = document.createElement('td');
                 let tdGroupNumber = document.createElement('td');
+                let tdTeachers = document.createElement('td');
+                let tdStudents = document.createElement('td');
+                let teachersName = student_group_service_1.default.getTeachersNameByGroupId(i);
+                teachersName = teachersName.join(", ");
+                let studentsName = student_group_service_1.default.getStudentsNameByGroupId(i);
+                studentsName = studentsName.join(", ");
                 tdLevel.textContent = store.findById(i).level;
                 tdGroupNumber.textContent = store.findById(i).groupNumber;
+                tdTeachers.textContent = teachersName;
+                tdStudents.textContent = studentsName;
                 tr.appendChild(tdLevel);
                 tr.appendChild(tdGroupNumber);
+                tr.appendChild(tdTeachers);
+                tr.appendChild(tdStudents);
                 table.querySelector('tbody').appendChild(tr);
             }
             return store;

@@ -2,8 +2,8 @@ define(["require", "exports", './store', '../models/subject'], function (require
     "use strict";
     const SubjectStore = new store_1.default();
     class SubjectService extends store_1.default {
-        static create(model) {
-            return new subject_1.default(model);
+        static create(name, level, hours, quote) {
+            return new subject_1.default(name, level, hours, quote);
         }
         static add(model) {
             SubjectStore.add(model);

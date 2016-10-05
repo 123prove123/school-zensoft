@@ -2,8 +2,8 @@ import Store from './store';
 const PositionStore = new Store();
 
 class PositionService{
-  static create(model) {
-    return new Position(model);
+  static create(quote, name) {
+    return new Position(quote, name);
   }
   static add(model) {
     PositionStore.add(model);

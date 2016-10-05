@@ -4,8 +4,8 @@ const StudentStore = new Store();
 
 
 class StudentService {
-  static create(model) {
-    return new Student(model);
+  static create(name, contact, isActive, dateOfBirth) {
+    return new Student({name, contact, isActive, dateOfBirth});
   }
   static add(model) {
     StudentStore.add(model);

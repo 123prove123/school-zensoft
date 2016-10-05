@@ -2,8 +2,8 @@ define(["require", "exports", './store', '../models/position'], function (requir
     "use strict";
     const PositionStore = new store_1.default();
     class PositionService {
-        static create(model) {
-            return new position_1.default(model);
+        static create(quote, name) {
+            return new position_1.default(quote, name);
         }
         static add(model) {
             PositionStore.add(model);

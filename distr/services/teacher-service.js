@@ -2,8 +2,8 @@ define(["require", "exports", './store', './teacher-role-service', '../models/te
     "use strict";
     const StoreTeacher = new store_1.default();
     class TeacherService {
-        static create(model) {
-            return new teacher_1.default(model);
+        static create(name, contact, isActive, dateOfBirth) {
+            return new teacher_1.default({ name, contact, isActive, dateOfBirth });
         }
         static add(model) {
             StoreTeacher.add(model);
