@@ -47,6 +47,16 @@ class StudentGroupService {
     });
     return studentName;
   }
+
+  static getGroupsName() {
+    let groupNames = []
+    StudentGroupStore.forEach(function(el){
+      groupNames.push(`${el.groupNumber}${el.level}`);
+    });
+    return groupNames;
+  }
+
+
 }
 
 export default StudentGroupService;

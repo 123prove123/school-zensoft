@@ -7,7 +7,7 @@ var parents = {
     whoWork: 'Businesman'
   },
   parentTwo: {
-    name: 'ParentOne',
+    name: 'ParentTwo',
     contact: '0321',
     isActive: true,
     dateOfBirth: '1983.09.21',

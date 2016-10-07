@@ -17,7 +17,7 @@ form .form-inner {
   margin-top: 20px;
   background: white;
 }
-form label, form input {
+form label, form input, form select {
   width: 100%;
   display: block;
   margin-bottom: 10px;

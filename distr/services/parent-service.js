@@ -11,6 +11,13 @@ define(["require", "exports", './store', '../models/parent'], function (require,
         static getStore() {
             return ParentStore;
         }
+        static getAllParentsName() {
+            let ParentName = [];
+            ParentStore.forEach(function (el) {
+                ParentName.push(el.user.name);
+            });
+            return ParentName;
+        }
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = ParentService;

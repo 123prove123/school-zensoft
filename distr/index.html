@@ -21,12 +21,14 @@
       <ul class="nav navbar-nav">
         <li><a href="#" id="StudentGroupOpen">StudentGroup Form</a></li>
         <li><a href="#" id="BookOpen">Book Form</a></li>
+        <li><a href="#" id="StudentOpen">Student Form</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
 <div class="container-fluid">
+
   <div class="table-responsive">
     <h2>Student Groups</h2>
     <table id="StudentGroups" class="table table-inverse">
@@ -43,6 +45,24 @@
       </tbody>
     </table>
   </div>
+
+  <div class="table-responsive">
+    <h2>Students</h2>
+    <table id="Students" class="table table-inverse">
+      <thead >
+        <tr>
+          <th>Name</th>
+          <th>Contact</th>
+          <th>isActive</th>
+          <th>DateOfBirth</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+
   <div class="table-responsive">
   <h2>Books</h2>
     <table id="Books" class="table table-inverse">
@@ -60,16 +80,36 @@
 </div>
 
 
-  <form id="StudentGroupForm">
-    <div class="form-inner">
-      <a href="#" class="close-form" id="StudentGroupClose">Close</a>
-      <label for="">Level</label>
-      <input id="GroupLevelInput" type="number">
-      <label for="">Group Number</label>
-      <input id="GroupNumberInput" type="text">
-      <a href="#" class="btn btn-danger" id="addStudentGroup">Add</a>
-    </div>
-  </form>
+<form id="StudentGroupForm">
+  <div class="form-inner">
+    <a href="#" class="close-form" id="StudentGroupClose">Close</a>
+    <label for="">Level</label>
+    <input id="GroupLevelInput" type="number">
+    <label for="">Group Number</label>
+    <input id="GroupNumberInput" type="text">
+    <a href="#" class="btn btn-danger" id="addStudentGroup">Add</a>
+  </div>
+</form>
+
+
+<form id="StudentForm">
+  <div class="form-inner">
+    <a href="#" class="close-form" id="StudentFormClose">Close</a>
+    <label for="">Name</label>
+    <input type="text" id="StudentFormName">
+    <label for="">Contact</label>
+    <input type="text" id="StudentFormContact">
+    <label for="">isActive</label>
+    <input type="text" id="StudentFormisActive">
+    <label for="">DateOfBirth</label>
+    <input type="text" id="StudentFormDateOfBirth">
+    <label for="">Select Group</label>
+    <select name="" id="StudentFormSelectGroup"></select>
+    <label for="">Select Parent</label>
+    <select name="" id="StudentFormSelectParent"></select>
+    <a href="#" class="btn btn-danger" id="StudentFormAdd">Add</a>
+  </div>
+</form>
 
 </body>
 </html>

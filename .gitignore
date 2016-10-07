@@ -1,2 +1,5 @@
 .idea/
 node_modules/
+distr/builder/
+distr/models/
+distr/services/

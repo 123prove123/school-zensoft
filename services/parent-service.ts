@@ -11,6 +11,13 @@ class ParentService{
   static getStore() {
     return ParentStore;
   }
+  static getAllParentsName() {
+    let ParentName = [];
+    ParentStore.forEach(function(el){
+      ParentName.push(el.user.name);
+    });
+    return ParentName;
+  }
 }
 
 export default ParentService;

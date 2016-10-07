@@ -1,4 +1,4 @@
-define(["require", "exports", '../services/student-group-service', '../services/book-service'], function (require, exports, student_group_service_1, book_service_1) {
+define(["require", "exports", '../services/student-group-service', '../services/book-service', '../services/student-service'], function (require, exports, student_group_service_1, book_service_1, student_service_1) {
     "use strict";
     class BuilderHTML {
         static groupsBuild() {
@@ -43,9 +43,32 @@ define(["require", "exports", '../services/student-group-service', '../services/
             }
             return store;
         }
+        static studentBuild() {
+            const store = student_service_1.default.getStore().getAll();
+            const storeLength = store.size + 1;
+            let table = document.getElementById('Students');
+            for (let i = 1; i < storeLength; i++) {
+                let tr = document.createElement('tr');
+                let tdName = document.createElement('td');
+                let tdContact = document.createElement('td');
+                let tdIsActive = document.createElement('td');
+                let tdDateOfBirth = document.createElement('td');
+                tdName.textContent = store.findById(i).user.name;
+                tdContact.textContent = store.findById(i).user.contact;
+                tdIsActive.textContent = store.findById(i).user.isActive;
+                tdDateOfBirth.textContent = store.findById(i).user.dateOfBirth;
+                tr.appendChild(tdName);
+                tr.appendChild(tdContact);
+                tr.appendChild(tdIsActive);
+                tr.appendChild(tdDateOfBirth);
+                table.querySelector('tbody').appendChild(tr);
+            }
+            return store;
+        }
         static run() {
             BuilderHTML.groupsBuild();
             BuilderHTML.booksBuild();
+            BuilderHTML.studentBuild();
         }
     }
     Object.defineProperty(exports, "__esModule", { value: true });

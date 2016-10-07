@@ -41,6 +41,13 @@ define(["require", "exports", './store', '../models/student-group'], function (r
             });
             return studentName;
         }
+        static getGroupsName() {
+            let groupNames = [];
+            StudentGroupStore.forEach(function (el) {
+                groupNames.push(`${el.groupNumber}${el.level}`);
+            });
+            return groupNames;
+        }
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = StudentGroupService;

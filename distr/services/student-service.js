@@ -11,6 +11,13 @@ define(["require", "exports", './store', '../models/student'], function (require
         static getStore() {
             return StudentStore;
         }
+        static getStudentsName() {
+            let studentNames = [];
+            StudentStore.forEach(function (el) {
+                studentNames.push(el.user.name);
+            });
+            return studentNames;
+        }
     }
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = StudentService;

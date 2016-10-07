@@ -38,8 +38,8 @@ class BuilderData {
   static positionBuilder() {
     for(let position in PositionData) {
       PositionService.create(
-        PositionData[position].name
-        PositionData[position].quote,
+        PositionData[position].name,
+        PositionData[position].quote
         ).save();
     }
   }

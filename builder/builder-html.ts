@@ -1,5 +1,6 @@
 import StudentGroupService from '../services/student-group-service';
 import BookService from '../services/book-service';
+import StudentService from '../services/student-service';
 
 class BuilderHTML{
   static groupsBuild() {
@@ -48,9 +49,37 @@ class BuilderHTML{
     }
     return store;
   }
+  static studentBuild() {
+    const store = StudentService.getStore().getAll();
+    const storeLength = store.size + 1;
+    let table = document.getElementById('Students');
+    for(let i = 1; i < storeLength; i++) {
+
+      let tr = document.createElement('tr');
+      let tdName = document.createElement('td');
+      let tdContact = document.createElement('td');
+      let tdIsActive = document.createElement('td');
+      let tdDateOfBirth = document.createElement('td');
+
+      tdName.textContent = store.findById(i).user.name;
+      tdContact.textContent = store.findById(i).user.contact;
+      tdIsActive.textContent = store.findById(i).user.isActive;
+      tdDateOfBirth.textContent = store.findById(i).user.dateOfBirth;
+
+      tr.appendChild(tdName);
+      tr.appendChild(tdContact);
+      tr.appendChild(tdIsActive);
+      tr.appendChild(tdDateOfBirth);
+
+
+      table.querySelector('tbody').appendChild(tr);
+    }
+    return store;
+  }
   static run() {
     BuilderHTML.groupsBuild();
     BuilderHTML.booksBuild();
+    BuilderHTML.studentBuild();
   }
 }
 

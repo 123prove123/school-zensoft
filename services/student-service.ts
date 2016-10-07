@@ -13,6 +13,13 @@ class StudentService {
   static getStore() {
     return StudentStore;
   }
+  static getStudentsName() {
+    let studentNames = []
+    StudentStore.forEach(function(el){
+      studentNames.push(el.user.name);
+    });
+    return studentNames;
+  }
 }
 
 
