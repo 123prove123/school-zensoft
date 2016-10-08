@@ -36,8 +36,25 @@ form a.close-form {
 }
 
 .table-responsive {
-  width:33.3333%;
+  width:50%;
   float: left;
   display: inline-block;
   padding: 0 15px;
+}
+
+.container-fluid {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn-edit {
+  margin-right: 10px;
 }
