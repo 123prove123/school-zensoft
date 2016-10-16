@@ -1,12 +1,13 @@
 import SubjectService from '../services/subject-service';
 
 class Subject {
-  constructor(name, level, hours, quote, books = [] ) {
-    this.setName(name);
-    this.setLevel(level);
-    this.setHours(hours);
-    this.setQuote(quote);
-    this.setBooks(books)
+  constructor(model) {
+    this.name = model.name;
+    this.level = model.level;
+    this.hours = model.hours;
+    this.quote = model.quote;
+    this.books = model.books;
+    this.id = model.id;
   }
   save() {
     SubjectService.add(this);

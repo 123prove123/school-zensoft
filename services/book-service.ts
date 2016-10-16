@@ -8,6 +8,7 @@ class BookService{
   static add(model) {
     BookStore.add(model);
   }
+
   static getStore() {
     return BookStore;
   }

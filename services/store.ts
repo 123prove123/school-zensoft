@@ -31,6 +31,14 @@ class Store extends Map {
     return this;
   }
   removeById(id) {
+    this.delete(id);  
+  }
+  removeByIdAndSession(id, sessionStore) {
+    const session = JSON.parse(sessionStorage.getItem('' + sessionStore));
+    let storeArray = session.filter((el) => {
+      return el.id !== id;
+    });
+    sessionStorage.setItem(sessionStore, JSON.stringify(storeArray));
     this.delete(id);
   }
   findBy(field, value) {

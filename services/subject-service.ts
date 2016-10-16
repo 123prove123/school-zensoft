@@ -2,8 +2,8 @@ import Store from './store';
 const SubjectStore = new Store();
 
 class SubjectService extends Store{
-  static create(name, level, hours, quote) {
-    return new Subject(name, level, hours, quote);
+  static create(model) {
+    return new Subject(model);
   }
   static add(model) {
     SubjectStore.add(model);

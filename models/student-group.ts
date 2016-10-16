@@ -2,11 +2,12 @@ import TeacherRole from './teacher-role';
 import StudentGroupService from '../services/student-group-service';
 
 class StudentGroup {
-  constructor(level, groupNumber, teacherRoles = [], students = [] ) {
-    this.setLevel(level);
-    this.setGroupNumber(groupNumber);
-    this.setTeacherRoles(teacherRoles);
-    this.setStudents(students);
+  constructor(model) {
+    this.level =  model.level;
+    this.groupNumber = model.groupNumber;
+    this.teacherRoles = model.teacherRoles;
+    this.students =  model.students;
+    this.id = model.id;
   }
   save() {
     StudentGroupService.add(this);
