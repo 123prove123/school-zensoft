@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "target": "es6",
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "outDir": "distr"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "files": [
+    "index.ts"
+  ]
+}
